@@ -1,0 +1,41 @@
+{
+  "expo": {
+    "name": "תורים לספר",
+    "slug": "barber-booking-app",
+    "version": "0.1.0",
+    "orientation": "portrait",
+    "scheme": "barberapp",
+    "userInterfaceStyle": "light",
+    "newArchEnabled": true,
+    "backgroundColor": "#0F172A",
+    "assetBundlePatterns": ["**/*"],
+    "ios": {
+      "supportsTablet": false,
+      "bundleIdentifier": "com.yourcompany.barberbooking",
+      "infoPlist": {
+        "CFBundleDevelopmentRegion": "he",
+        "CFBundleLocalizations": ["he"]
+      }
+    },
+    "android": {
+      "package": "com.yourcompany.barberbooking",
+      "edgeToEdgeEnabled": true,
+      "permissions": ["NOTIFICATIONS"]
+    },
+    "plugins": [
+      [
+        "expo-notifications",
+        {
+          "color": "#0F172A"
+        }
+      ]
+    ],
+    "extra": {
+      "supabaseUrl": "",
+      "supabaseAnonKey": "",
+      "eas": {
+        "projectId": ""
+      }
+    }
+  }
+}

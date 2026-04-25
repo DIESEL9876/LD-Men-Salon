@@ -1,0 +1,10 @@
+{
+  "permissions": {
+    "allow": [
+      "WebFetch(domain:docs.expo.dev)",
+      "WebFetch(domain:raw.githubusercontent.com)",
+      "WebFetch(domain:registry.npmjs.org)",
+      "Bash(./node_modules/.bin/tsc --noEmit)"
+    ]
+  }
+}
