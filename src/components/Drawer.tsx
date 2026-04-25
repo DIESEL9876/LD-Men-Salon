@@ -122,11 +122,16 @@ export function DrawerProvider({
 
               <View style={styles.header}>
                 <Avatar name={config.name} size={56} tone="gold" />
-                <View style={{ flex: 1, gap: 4 }}>
+
+                <View style={styles.headerTextWrap}>
                   <Text variant="eyebrow" tone="gold">
                     חשבון
                   </Text>
-                  <Text variant="h3">{config.name ?? 'אורח'}</Text>
+
+                  <Text variant="h3">
+                    {config.name ?? 'אורח'}
+                  </Text>
+
                   {config.subtitle ? (
                     <Text variant="caption" tone="secondary">
                       {config.subtitle}
@@ -137,18 +142,19 @@ export function DrawerProvider({
 
               <Divider />
 
-              <View style={{ flex: 1, paddingHorizontal: spacing.sm }}>
+              <View style={styles.sectionsWrap}>
                 {config.sections.map((section, sIdx) => (
-                  <View key={sIdx} style={{ gap: spacing.xs, marginBottom: spacing.md }}>
+                  <View key={sIdx} style={styles.sectionBlock}>
                     {section.title ? (
                       <Text
                         variant="eyebrow"
                         tone="tertiary"
-                        style={{ paddingHorizontal: spacing.md, marginTop: spacing.sm }}
+                        style={styles.sectionTitle}
                       >
                         {section.title}
                       </Text>
                     ) : null}
+
                     {section.items.map((item) => (
                       <ListRow
                         key={item.key}
@@ -158,7 +164,6 @@ export function DrawerProvider({
                         danger={item.danger}
                         onPress={() => {
                           close();
-                          // slight delay so drawer closes before nav
                           setTimeout(item.onPress, 180);
                         }}
                       />
@@ -182,40 +187,61 @@ export function DrawerProvider({
 
 const styles = StyleSheet.create({
   root: { flex: 1, flexDirection: 'row' },
+
   backdrop: {
     ...StyleSheet.absoluteFillObject,
     backgroundColor: colors.overlayStrong,
   },
+
   sheet: {
     position: 'absolute',
     top: 0,
-    // Under forceRTL, RN flips physical `left`/`right`. Setting `left: 0`
-    // pins the sheet to the *physical right* edge (the natural drawer side
-    // in an RTL UI). On non-RTL builds we fall back to `right: 0`.
     ...(isRTL ? { left: 0 } : { right: 0 }),
     height: '100%',
     backgroundColor: colors.surfaceSubtle,
-    // Round the corners that face *into* the screen. RN auto-flips
-    // `borderTopLeftRadius` etc. under RTL too, so the same physical
-    // values keep working.
     borderTopLeftRadius: radius.xxl,
     borderBottomLeftRadius: radius.xxl,
     borderLeftWidth: 1,
     borderColor: colors.border,
     overflow: 'hidden',
   },
+
   brandBar: {
     paddingHorizontal: spacing.lg,
     paddingTop: spacing.md,
     paddingBottom: spacing.xs,
+    alignItems: 'flex-end',
   },
+
   header: {
-    flexDirection: 'row',
+    flexDirection: 'row-reverse',
     alignItems: 'center',
     paddingHorizontal: spacing.lg,
     paddingVertical: spacing.md,
     gap: spacing.md,
   },
+
+  headerTextWrap: {
+    flex: 1,
+    gap: 4,
+    alignItems: 'flex-end',
+  },
+
+  sectionsWrap: {
+    flex: 1,
+    paddingHorizontal: spacing.sm,
+  },
+
+  sectionBlock: {
+    gap: spacing.xs,
+    marginBottom: spacing.md,
+  },
+
+  sectionTitle: {
+    paddingHorizontal: spacing.md,
+    marginTop: spacing.sm,
+  },
+
   footer: {
     padding: spacing.lg,
   },

@@ -3,7 +3,15 @@ import { Text as RNText, TextProps, StyleSheet } from 'react-native';
 import { colors, typography } from '../theme';
 import type { TypographyVariant } from '../theme';
 
-type Tone = 'primary' | 'secondary' | 'tertiary' | 'dim' | 'gold' | 'inverse' | 'danger' | 'success';
+type Tone =
+  | 'primary'
+  | 'secondary'
+  | 'tertiary'
+  | 'dim'
+  | 'gold'
+  | 'inverse'
+  | 'danger'
+  | 'success';
 
 export function Text({
   variant = 'body',
@@ -30,13 +38,25 @@ export function Text({
 
   return (
     <RNText
-      style={[typography[variant], { color: toneColor, textAlign: align, writingDirection: 'rtl' }, style]}
+      style={[
+        typography[variant],
+        styles.base,
+        { color: toneColor, textAlign: align },
+        style,
+      ]}
       {...rest}
     >
       {children}
     </RNText>
   );
 }
+
+const styles = StyleSheet.create({
+  base: {
+    width: '100%',
+    writingDirection: 'rtl',
+  },
+});
 
 // small convenience wrappers
 export const Eyebrow = (props: React.ComponentProps<typeof Text>) => (
