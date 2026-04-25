@@ -29,7 +29,7 @@ export function StatTile({
         justifyContent: 'space-between',
       }}
     >
-      <View style={{ flexDirection: 'row', justifyContent: 'space-between', alignItems: 'center' }}>
+      <View style={{ flexDirection: 'row-reverse', justifyContent: 'space-between', alignItems: 'center' }}>
         <Text variant="eyebrow" tone={highlight ? 'gold' : 'secondary'}>
           {label}
         </Text>

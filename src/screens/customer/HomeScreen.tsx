@@ -61,7 +61,7 @@ export function HomeScreen() {
       />
 
       {/* Brandmark at top */}
-      <View style={{ alignItems: 'flex-start', paddingBottom: spacing.xs }}>
+      <View style={{ alignItems: 'flex-end', paddingBottom: spacing.xs }}>
         <Brandmark layout="inline" size="xs" showTagline={false} />
       </View>
 
@@ -126,7 +126,7 @@ export function HomeScreen() {
 
       {/* Hours card */}
       <Card tone="subtle" padding="lg">
-        <View style={{ flexDirection: 'row', justifyContent: 'space-between', alignItems: 'center' }}>
+        <View style={{ flexDirection: 'row-reverse', justifyContent: 'space-between', alignItems: 'center' }}>
           <View style={{ gap: spacing.xxs }}>
             <Text variant="eyebrow" tone="gold">
               שעות פתיחה
@@ -185,7 +185,7 @@ function QuickTile({
 
 const styles = StyleSheet.create({
   grid: {
-    flexDirection: 'row',
+    flexDirection: 'row-reverse',
     flexWrap: 'wrap',
     gap: spacing.sm,
   },

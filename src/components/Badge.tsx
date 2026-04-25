@@ -16,7 +16,7 @@ export function Badge({ label, tone = 'neutral' }: { label: string; tone?: Badge
   return (
     <View
       style={{
-        alignSelf: 'flex-start',
+        alignSelf: 'flex-end',
         backgroundColor: palette.bg,
         borderWidth: 1,
         borderColor: palette.border,

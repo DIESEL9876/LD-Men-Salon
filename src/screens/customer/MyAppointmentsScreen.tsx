@@ -75,7 +75,7 @@ export function MyAppointmentsScreen() {
           ) : (
             UPCOMING.map((a) => (
               <Card key={a.id} padding="lg">
-                <View style={{ flexDirection: 'row', justifyContent: 'space-between', alignItems: 'center' }}>
+                <View style={{ flexDirection: 'row-reverse', justifyContent: 'space-between', alignItems: 'center' }}>
                   <View style={{ gap: 2 }}>
                     <Text variant="eyebrow" tone="gold">
                       {a.date}
@@ -94,7 +94,7 @@ export function MyAppointmentsScreen() {
                 <IconRow icon="user" label={a.barber} />
                 <IconRow icon="credit-card" label={`₪${a.price} · תשלום בעסק`} />
 
-                <View style={{ flexDirection: 'row', gap: spacing.sm, marginTop: spacing.md }}>
+                <View style={{ flexDirection: 'row-reverse', gap: spacing.sm, marginTop: spacing.md }}>
                   <Button title="פרטים" variant="secondary" fullWidth={false} style={{ flex: 1 }} />
                   <Button title="ביטול" variant="danger" fullWidth={false} style={{ flex: 1 }} />
                 </View>
@@ -115,7 +115,7 @@ export function MyAppointmentsScreen() {
           ) : (
             PAST.map((a) => (
             <Card key={a.id} padding="lg" tone="subtle">
-              <View style={{ flexDirection: 'row', justifyContent: 'space-between', alignItems: 'center' }}>
+              <View style={{ flexDirection: 'row-reverse', justifyContent: 'space-between', alignItems: 'center' }}>
                 <View style={{ gap: 2 }}>
                   <Text variant="eyebrow" tone="secondary">
                     {a.date}
@@ -160,7 +160,7 @@ function IconRow({
   muted?: boolean;
 }) {
   return (
-    <View style={{ flexDirection: 'row', alignItems: 'center', gap: spacing.sm }}>
+    <View style={{ flexDirection: 'row-reverse', alignItems: 'center', gap: spacing.sm }}>
       <Feather name={icon} size={15} color={muted ? colors.textTertiary : colors.gold} />
       <Text variant="body" tone={muted ? 'tertiary' : 'secondary'}>
         {label}

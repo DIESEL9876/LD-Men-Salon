@@ -96,7 +96,7 @@ export function AdminAppointmentsScreen() {
               >
                 <View
                   style={{
-                    flexDirection: 'row',
+                    flexDirection: 'row-reverse',
                     justifyContent: 'space-between',
                     alignItems: 'center',
                   }}
@@ -117,12 +117,12 @@ export function AdminAppointmentsScreen() {
 
                 <Divider />
 
-                <View style={{ flexDirection: 'row', alignItems: 'center', gap: spacing.sm }}>
+                <View style={{ flexDirection: 'row-reverse', alignItems: 'center', gap: spacing.sm }}>
                   <Avatar name={a.profile?.full_name} size={40} />
                   <View style={{ flex: 1, gap: 2 }}>
                     <Text variant="bodyStrong">{a.profile?.full_name ?? '—'}</Text>
                     {a.profile?.phone ? (
-                      <View style={{ flexDirection: 'row', alignItems: 'center', gap: 4 }}>
+                      <View style={{ flexDirection: 'row-reverse', alignItems: 'center', gap: 4 }}>
                         <Feather name="phone" size={11} color={colors.textTertiary} />
                         <Text variant="micro" tone="tertiary">
                           {a.profile.phone}
@@ -143,7 +143,7 @@ export function AdminAppointmentsScreen() {
                 {a.status === 'confirmed' ? (
                   <View
                     style={{
-                      flexDirection: 'row',
+                      flexDirection: 'row-reverse',
                       gap: spacing.sm,
                       marginTop: spacing.md,
                     }}
@@ -175,7 +175,7 @@ export function AdminAppointmentsScreen() {
 
 function DetailRow({ icon, label }: { icon: keyof typeof Feather.glyphMap; label: string }) {
   return (
-    <View style={{ flexDirection: 'row', alignItems: 'center', gap: spacing.sm }}>
+    <View style={{ flexDirection: 'row-reverse', alignItems: 'center', gap: spacing.sm }}>
       <Feather name={icon} size={14} color={colors.textTertiary} />
       <Text variant="caption" tone="secondary">
         {label}

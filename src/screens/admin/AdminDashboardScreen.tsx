@@ -72,13 +72,13 @@ export function AdminDashboardScreen() {
         </Text>
       </View>
 
-      <View style={{ flexDirection: 'row', gap: spacing.sm }}>
+      <View style={{ flexDirection: 'row-reverse', gap: spacing.sm }}>
         <StatTile label="היום" value={todayCount} icon="calendar" highlight />
         <StatTile label="השבוע" value={weekCount} icon="trending-up" />
       </View>
 
       <View style={{ gap: spacing.sm }}>
-        <View style={{ flexDirection: 'row', justifyContent: 'space-between', alignItems: 'center' }}>
+        <View style={{ flexDirection: 'row-reverse', justifyContent: 'space-between', alignItems: 'center' }}>
           <Text variant="eyebrow" tone="secondary">
             סדר היום
           </Text>
@@ -115,7 +115,7 @@ function AgendaRow({ appointment }: { appointment: AppointmentWithJoins }) {
   return (
     <View
       style={{
-        flexDirection: 'row',
+        flexDirection: 'row-reverse',
         alignItems: 'center',
         gap: spacing.md,
         paddingHorizontal: spacing.md,
@@ -142,7 +142,7 @@ function AgendaRow({ appointment }: { appointment: AppointmentWithJoins }) {
           {appointment.service?.name} · {appointment.barber?.name}
         </Text>
         {appointment.profile?.phone ? (
-          <View style={{ flexDirection: 'row', alignItems: 'center', gap: 4, marginTop: 2 }}>
+          <View style={{ flexDirection: 'row-reverse', alignItems: 'center', gap: 4, marginTop: 2 }}>
             <Feather name="phone" size={11} color={colors.textTertiary} />
             <Text variant="micro" tone="tertiary">
               {appointment.profile.phone}

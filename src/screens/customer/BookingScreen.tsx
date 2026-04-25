@@ -100,7 +100,7 @@ export function BookingScreen() {
               tone={barber?.id === b.id ? 'gold' : 'default'}
               padding="md"
             >
-              <View style={{ flexDirection: 'row', alignItems: 'center', gap: spacing.md }}>
+              <View style={{ flexDirection: 'row-reverse', alignItems: 'center', gap: spacing.md }}>
                 <Avatar name={b.name} size={56} tone={barber?.id === b.id ? 'gold' : 'default'} />
                 <View style={{ flex: 1, gap: 2 }}>
                   <Text variant="h3">{b.name}</Text>
@@ -126,9 +126,9 @@ export function BookingScreen() {
               tone={service?.id === s.id ? 'gold' : 'default'}
               padding="md"
             >
-              <View style={{ flexDirection: 'row', alignItems: 'center', gap: spacing.md }}>
+              <View style={{ flexDirection: 'row-reverse', alignItems: 'center', gap: spacing.md }}>
                 <View style={{ flex: 1, gap: spacing.xxs }}>
-                  <View style={{ flexDirection: 'row', gap: spacing.xs, alignItems: 'center' }}>
+                  <View style={{ flexDirection: 'row-reverse', gap: spacing.xs, alignItems: 'center' }}>
                     <Text variant="h3">{s.name}</Text>
                     {s.popular ? (
                       <View
@@ -150,14 +150,14 @@ export function BookingScreen() {
                   <Text variant="caption" tone="secondary">
                     {s.description}
                   </Text>
-                  <View style={{ flexDirection: 'row', alignItems: 'center', gap: 4, marginTop: 4 }}>
+                  <View style={{ flexDirection: 'row-reverse', alignItems: 'center', gap: 4, marginTop: 4 }}>
                     <Feather name="clock" size={12} color={colors.textTertiary} />
                     <Text variant="micro" tone="tertiary">
                       {s.duration} דקות
                     </Text>
                   </View>
                 </View>
-                <View style={{ alignItems: 'flex-start', gap: 2 }}>
+                <View style={{ alignItems: 'flex-end', gap: 2 }}>
                   <Text variant="h2" tone="gold">
                     ₪{s.price}
                   </Text>
@@ -234,7 +234,7 @@ export function BookingScreen() {
 
             <Divider />
 
-            <View style={{ flexDirection: 'row', justifyContent: 'space-between', alignItems: 'center' }}>
+            <View style={{ flexDirection: 'row-reverse', justifyContent: 'space-between', alignItems: 'center' }}>
               <Text variant="bodyStrong">סה"כ</Text>
               <Text variant="h2" tone="gold">
                 ₪{service?.price ?? 0}
@@ -259,7 +259,7 @@ export function BookingScreen() {
       )}
 
       {/* Footer action */}
-      <View style={{ flexDirection: 'row', gap: spacing.sm, marginTop: spacing.sm }}>
+      <View style={{ flexDirection: 'row-reverse', gap: spacing.sm, marginTop: spacing.sm }}>
         {step > 1 ? (
           <Button
             title="הקודם"
@@ -284,7 +284,7 @@ export function BookingScreen() {
 
 function SummaryRow({ label, value }: { label: string; value: string }) {
   return (
-    <View style={{ flexDirection: 'row', justifyContent: 'space-between' }}>
+    <View style={{ flexDirection: 'row-reverse', justifyContent: 'space-between' }}>
       <Text variant="body" tone="secondary">
         {label}
       </Text>
@@ -295,7 +295,7 @@ function SummaryRow({ label, value }: { label: string; value: string }) {
 
 const styles = StyleSheet.create({
   timeGrid: {
-    flexDirection: 'row',
+    flexDirection: 'row-reverse',
     flexWrap: 'wrap',
     gap: spacing.xs,
   },

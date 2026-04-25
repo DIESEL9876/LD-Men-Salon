@@ -5,7 +5,7 @@ import { DrawerProvider } from '../components/Drawer';
 import { t } from '../i18n/he';
 import { CustomerNavigator } from './CustomerNavigator';
 import { AdminNavigator } from './AdminNavigator';
-import { navigate } from './navigationService';
+import { navigate } from './RootNavigator';
 import { BUSINESS } from '../data/placeholders';
 
 export function AuthedShell() {

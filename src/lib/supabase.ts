@@ -12,36 +12,14 @@ if (!supabaseUrl || !supabaseAnonKey) {
   );
 }
 
-const customFetch: typeof fetch = async (input, init) => {
-  try {
-    return await fetch(input, init);
-  } catch (error) {
-    // eslint-disable-next-line no-console
-    console.warn('Supabase fetch failed:', typeof input === 'string' ? input : input?.url, error);
-    throw error;
-  }
-};
-
 export const supabase = createClient(supabaseUrl, supabaseAnonKey, {
-  global: {
-    fetch: customFetch,
-  },
   auth: {
     storage: AsyncStorage,
     autoRefreshToken: true,
     persistSession: true,
     detectSessionInUrl: false,
-    lock: undefined,
   },
 });
-
-export async function clearStoredAuthSession() {
-  const keys = await AsyncStorage.getAllKeys();
-  const supabaseKeys = keys.filter((key) => key.includes('supabase') || key.startsWith('sb-'));
-  if (supabaseKeys.length > 0) {
-    await AsyncStorage.multiRemove(supabaseKeys);
-  }
-}
 
 export type Profile = {
   id: string;

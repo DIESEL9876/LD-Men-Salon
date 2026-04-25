@@ -18,7 +18,7 @@ export function AppHeader({
   return (
     <View
       style={{
-        flexDirection: 'row',
+        flexDirection: 'row-reverse',
         alignItems: 'center',
         justifyContent: 'space-between',
         paddingBottom: spacing.md,
@@ -29,7 +29,7 @@ export function AppHeader({
       ) : (
         <IconButton icon="menu" onPress={open} />
       )}
-      <View style={{ flexDirection: 'row', gap: spacing.xs }}>{trailing}</View>
+      <View style={{ flexDirection: 'row-reverse', gap: spacing.xs }}>{trailing}</View>
     </View>
   );
 }

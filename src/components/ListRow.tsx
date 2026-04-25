@@ -25,7 +25,7 @@ export function ListRow({
   const content = (
     <View
       style={{
-        flexDirection: 'row',
+        flexDirection: 'row-reverse',
         alignItems: 'center',
         paddingVertical: spacing.md,
         paddingHorizontal: spacing.md,

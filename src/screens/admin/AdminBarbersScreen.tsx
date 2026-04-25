@@ -165,7 +165,7 @@ export function AdminBarbersScreen() {
         <Card padding="lg" tone="hero">
           <View
             style={{
-              flexDirection: 'row',
+              flexDirection: 'row-reverse',
               justifyContent: 'space-between',
               alignItems: 'center',
               marginBottom: spacing.md,
@@ -224,7 +224,7 @@ export function AdminBarbersScreen() {
               <Card key={b.id} padding="lg" tone={b.active ? 'default' : 'subtle'}>
                 <View
                   style={{
-                    flexDirection: 'row',
+                    flexDirection: 'row-reverse',
                     alignItems: 'center',
                     gap: spacing.md,
                   }}
@@ -251,7 +251,7 @@ export function AdminBarbersScreen() {
                 <View style={{ gap: spacing.xs }}>
                   <View
                     style={{
-                      flexDirection: 'row',
+                      flexDirection: 'row-reverse',
                       justifyContent: 'space-between',
                       alignItems: 'center',
                     }}
@@ -264,7 +264,7 @@ export function AdminBarbersScreen() {
                     </Text>
                   </View>
 
-                  <View style={{ flexDirection: 'row', gap: 6, flexWrap: 'wrap' }}>
+                  <View style={{ flexDirection: 'row-reverse', gap: 6, flexWrap: 'wrap' }}>
                     {t.days.map((_label, dow) => {
                       const active = hours.some((w) => w.day_of_week === dow);
                       return (
@@ -281,7 +281,7 @@ export function AdminBarbersScreen() {
 
                 <Divider />
 
-                <View style={{ flexDirection: 'row', gap: spacing.sm }}>
+                <View style={{ flexDirection: 'row-reverse', gap: spacing.sm }}>
                   <Button
                     title="ערוך"
                     variant="secondary"

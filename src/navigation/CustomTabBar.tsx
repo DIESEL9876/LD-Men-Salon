@@ -85,7 +85,7 @@ const styles = StyleSheet.create({
     backgroundColor: 'transparent',
   },
   bar: {
-    flexDirection: 'row',
+    flexDirection: 'row-reverse',
     backgroundColor: colors.surfaceElevated,
     borderWidth: 1,
     borderColor: colors.border,
@@ -96,7 +96,7 @@ const styles = StyleSheet.create({
   },
   item: {
     flex: 1,
-    flexDirection: 'row',
+    flexDirection: 'row-reverse',
     alignItems: 'center',
     justifyContent: 'center',
     gap: 6,

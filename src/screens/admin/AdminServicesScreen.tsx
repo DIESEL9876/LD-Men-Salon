@@ -121,7 +121,7 @@ export function AdminServicesScreen() {
         <Card padding="lg" tone="hero">
           <View
             style={{
-              flexDirection: 'row',
+              flexDirection: 'row-reverse',
               justifyContent: 'space-between',
               alignItems: 'center',
               marginBottom: spacing.md,
@@ -141,7 +141,7 @@ export function AdminServicesScreen() {
               onChangeText={setDescription}
               placeholder="תיאור קצר לשירות"
             />
-            <View style={{ flexDirection: 'row', gap: spacing.sm }}>
+            <View style={{ flexDirection: 'row-reverse', gap: spacing.sm }}>
               <View style={{ flex: 1 }}>
                 <TextField label="מחיר (₪)" value={price} onChangeText={setPrice} keyboardType="numeric" />
               </View>
@@ -179,9 +179,9 @@ export function AdminServicesScreen() {
             <Card key={s.id} padding="lg" tone={s.active ? 'default' : 'subtle'}>
               <View
                 style={{
-                  flexDirection: 'row',
+                  flexDirection: 'row-reverse',
                   justifyContent: 'space-between',
-                  alignItems: 'flex-start',
+                  alignItems: 'flex-end',
                 }}
               >
                 <View style={{ flex: 1, gap: 4 }}>
@@ -200,14 +200,14 @@ export function AdminServicesScreen() {
                 />
               </View>
 
-              <View style={{ flexDirection: 'row', gap: spacing.lg, marginTop: spacing.sm }}>
+              <View style={{ flexDirection: 'row-reverse', gap: spacing.lg, marginTop: spacing.sm }}>
                 <MetaItem icon="credit-card" value={`₪${s.price}`} highlight />
                 <MetaItem icon="clock" value={`${s.duration_minutes} דק׳`} />
               </View>
 
               <Divider />
 
-              <View style={{ flexDirection: 'row', gap: spacing.sm }}>
+              <View style={{ flexDirection: 'row-reverse', gap: spacing.sm }}>
                 <Button
                   title="ערוך"
                   variant="secondary"
@@ -251,7 +251,7 @@ function MetaItem({
   highlight?: boolean;
 }) {
   return (
-    <View style={{ flexDirection: 'row', alignItems: 'center', gap: 6 }}>
+    <View style={{ flexDirection: 'row-reverse', alignItems: 'center', gap: 6 }}>
       <Feather name={icon} size={13} color={highlight ? colors.gold : colors.textTertiary} />
       <Text variant="bodyStrong" tone={highlight ? 'gold' : 'secondary'}>
         {value}

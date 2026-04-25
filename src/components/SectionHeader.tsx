@@ -16,7 +16,7 @@ export function SectionHeader({
 }) {
   return (
     <View style={{ gap: spacing.xxs, marginBottom: spacing.xs }}>
-      <View style={{ flexDirection: 'row', justifyContent: 'space-between', alignItems: 'flex-end' }}>
+      <View style={{ flexDirection: 'row-reverse', justifyContent: 'space-between', alignItems: 'flex-end' }}>
         <View style={{ flex: 1, gap: spacing.xxs }}>
           {eyebrow ? <Text variant="eyebrow" tone="gold">{eyebrow}</Text> : null}
           <Text variant="h1" tone="primary">{title}</Text>

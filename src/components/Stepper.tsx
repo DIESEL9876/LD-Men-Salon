@@ -12,7 +12,7 @@ export function Stepper({
 }) {
   return (
     <View style={{ gap: spacing.sm }}>
-      <View style={{ flexDirection: 'row', gap: 6 }}>
+      <View style={{ flexDirection: 'row-reverse', gap: 6 }}>
         {steps.map((_, i) => {
           const n = i + 1;
           const done = n < current;
@@ -31,7 +31,7 @@ export function Stepper({
           );
         })}
       </View>
-      <View style={{ flexDirection: 'row', justifyContent: 'space-between' }}>
+      <View style={{ flexDirection: 'row-reverse', justifyContent: 'space-between' }}>
         <Text variant="eyebrow" tone="gold">
           שלב {current} מתוך {steps.length}
         </Text>

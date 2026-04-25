@@ -59,7 +59,7 @@ export function Brandmark({
   );
 
   const wordmark = (
-    <View style={{ gap: 2, alignItems: layout === 'stack' ? 'center' : 'flex-start' }}>
+    <View style={{ gap: 2, alignItems: layout === 'stack' ? 'center' : 'flex-end' }}>
       <Text
         tone="primary"
         align={layout === 'stack' ? 'center' : 'right'}
@@ -85,7 +85,7 @@ export function Brandmark({
       <View
         style={[
           {
-            flexDirection: 'row',
+            flexDirection: 'row-reverse',
             alignItems: 'center',
             gap: spacing.sm,
           },

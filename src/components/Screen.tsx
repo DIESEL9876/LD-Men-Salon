@@ -17,24 +17,26 @@ export function Screen({
   contentStyle?: ViewStyle;
 }) {
   const padding = padded ? { paddingHorizontal: spacing.lg, paddingVertical: spacing.lg } : {};
+  const rtlContent = { direction: 'rtl' as const, alignItems: 'stretch' as const };
+
 
   return (
     <SafeAreaView edges={['top', 'bottom']} style={[styles.safe, style]}>
       {scroll ? (
         <ScrollView
-          contentContainerStyle={[padding, { paddingBottom: spacing.xxxl, gap: spacing.lg }, contentStyle]}
+          contentContainerStyle={[padding, rtlContent, { paddingBottom: spacing.xxxl, gap: spacing.lg }, contentStyle]}
           showsVerticalScrollIndicator={false}
           keyboardShouldPersistTaps="handled"
         >
           {children}
         </ScrollView>
       ) : (
-        <View style={[padding, { flex: 1, gap: spacing.lg }, contentStyle]}>{children}</View>
+        <View style={[padding, rtlContent, { flex: 1, gap: spacing.lg }, contentStyle]}>{children}</View>
       )}
     </SafeAreaView>
   );
 }
 
 const styles = StyleSheet.create({
-  safe: { flex: 1, backgroundColor: colors.background },
+  safe: { flex: 1, backgroundColor: colors.background, direction: 'rtl' },
 });

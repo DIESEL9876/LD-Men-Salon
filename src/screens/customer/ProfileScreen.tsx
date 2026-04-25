@@ -55,7 +55,7 @@ export function ProfileScreen() {
       </View>
 
       <Card tone="hero" padding="lg">
-        <View style={{ flexDirection: 'row', alignItems: 'center', gap: spacing.md }}>
+        <View style={{ flexDirection: 'row-reverse', alignItems: 'center', gap: spacing.md }}>
           <Avatar name={profile?.full_name} size={64} tone="gold" />
           <View style={{ flex: 1, gap: 2 }}>
             <Text variant="h2">{profile?.full_name || 'משתמש חדש'}</Text>

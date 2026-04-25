@@ -64,7 +64,7 @@ export function Button({
           borderColor: border,
           borderWidth: variant === 'ghost' ? 0 : 1,
           opacity: isDisabled ? 0.45 : pressed ? 0.85 : 1,
-          alignSelf: fullWidth ? 'stretch' : 'flex-start',
+          alignSelf: fullWidth ? 'stretch' : 'flex-end',
           paddingHorizontal: fullWidth ? spacing.lg : spacing.xl,
         },
         shadow,
@@ -107,7 +107,7 @@ const styles = StyleSheet.create({
     justifyContent: 'center',
   },
   inner: {
-    flexDirection: 'row',
+    flexDirection: 'row-reverse',
     alignItems: 'center',
     justifyContent: 'center',
   },

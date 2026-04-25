@@ -15,7 +15,7 @@ export function SegmentedControl<T extends string>({
   return (
     <View
       style={{
-        flexDirection: 'row',
+        flexDirection: 'row-reverse',
         backgroundColor: colors.surface,
         borderWidth: 1,
         borderColor: colors.border,
